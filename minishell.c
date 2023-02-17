@@ -78,6 +78,7 @@ int main()
         add_history(line);
         if (strcmp(line, "exit") == 0)
             break;
+        // strtok é proibida
         char *token = strtok(line, " ");
         int i = 0;
         while (token != NULL)
