@@ -1,3 +1,9 @@
+# TODO
+
+1- [ ] Tokenizar a string de entrada
+ - [ ] Identificar os caracteres especiais
+2- [ ] Expansão de variáveis
+
 # Minishell
 
 Minishell é um projeto da 42SP que consiste em recriar o shell do bash.
