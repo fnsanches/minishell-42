@@ -62,13 +62,16 @@ char *str_prompt(void)
     return prompt;
 }
 
-int main()
+int main(int argc, char **argv, char **envp)
 {
     char *line;
     char *args[10];
     int status;
     pid_t pid;
     char *prompt;
+    (void)argc;
+    (void)argv;
+    envp = NULL;
 
     while (1)
     {
@@ -91,7 +94,7 @@ int main()
         pid = fork();
         if (pid == 0)
         {
-            execvp(args[0], args);
+            execve(args[0], args, envp);
             exit(0);
         }
         else
