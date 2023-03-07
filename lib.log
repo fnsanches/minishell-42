@@ -1,0 +1,1791 @@
+==3082== Memcheck, a memory error detector
+==3082== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3082== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==3082== Command: ./minishell
+==3082== Parent PID: 270
+==3082== 
+==3083== 
+==3083== HEAP SUMMARY:
+==3083==     in use at exit: 0 bytes in 0 blocks
+==3083==   total heap usage: 49 allocs, 49 frees, 5,313 bytes allocated
+==3083== 
+==3083== All heap blocks were freed -- no leaks are possible
+==3083== 
+==3083== For lists of detected and suppressed errors, rerun with: -s
+==3083== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==3082== 
+==3082== HEAP SUMMARY:
+==3082==     in use at exit: 205,327 bytes in 230 blocks
+==3082==   total heap usage: 528 allocs, 298 frees, 252,028 bytes allocated
+==3082== 
+==3082== 5 bytes in 1 blocks are definitely lost in loss record 1 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486F2AB: readline_internal_teardown (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4870504: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:xmalloc
+   fun:readline_internal_teardown
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 8 bytes in 1 blocks are still reachable in loss record 2 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x494938E: strdup (strdup.c:42)
+==3082==    by 0x4AB74F7: _nc_trim_sgr0 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0538: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:_nc_trim_sgr0
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 8 bytes in 1 blocks are still reachable in loss record 3 of 66
+==3082==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4896041: xrealloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4881063: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48817D5: rl_expand_prompt (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486EFE5: rl_set_prompt (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AA: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:realloc
+   fun:xrealloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_expand_prompt
+   fun:rl_set_prompt
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 13 bytes in 1 blocks are still reachable in loss record 4 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487DCF2: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4870228: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 14 bytes in 1 blocks are still reachable in loss record 5 of 66
+==3082==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AAD2C7: _nc_doalloc (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB1C3E: tparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB7274: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB74E9: _nc_trim_sgr0 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0538: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:realloc
+   fun:_nc_doalloc
+   fun:tparm
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_trim_sgr0
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 15 bytes in 1 blocks are still reachable in loss record 6 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x494938E: strdup (strdup.c:42)
+==3082==    by 0x4AAFE4F: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 16 bytes in 1 blocks are still reachable in loss record 7 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x494938E: strdup (strdup.c:42)
+==3082==    by 0x4AACAA7: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AACD9B: _nc_first_db (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6E1E: _nc_read_entry2 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAF9F5: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE04: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_first_db
+   fun:_nc_read_entry2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+}
+==3082== 16 bytes in 1 blocks are still reachable in loss record 8 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4870317: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 20 bytes in 1 blocks are still reachable in loss record 9 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487E9D3: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487D818: rl_parse_and_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487DC6C: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4870228: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_parse_and_bind
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 28 bytes in 1 blocks are still reachable in loss record 10 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AAD68C: _nc_home_terminfo (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AACD85: _nc_first_db (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6E1E: _nc_read_entry2 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAF9F5: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE04: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_nc_home_terminfo
+   fun:_nc_first_db
+   fun:_nc_read_entry2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+}
+==3082== 38 bytes in 2 blocks are definitely lost in loss record 11 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x10C45F: ft_strjoin (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x10BBA0: get_prompt (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109589: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:ft_strjoin
+   fun:get_prompt
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 42 bytes in 2 blocks are definitely lost in loss record 12 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x10C45F: ft_strjoin (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x10BBB7: get_prompt (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109589: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:ft_strjoin
+   fun:get_prompt
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 46 bytes in 1 blocks are still reachable in loss record 13 of 66
+==3082==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AAD2C7: _nc_doalloc (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6504: _nc_read_termtype (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB691C: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6D13: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6E44: _nc_read_entry2 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAF9F5: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE04: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:realloc
+   fun:_nc_doalloc
+   fun:_nc_read_termtype
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_read_entry2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+}
+==3082== 46 bytes in 1 blocks are still reachable in loss record 14 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AAB18E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE1B: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 48 bytes in 1 blocks are still reachable in loss record 15 of 66
+==3082==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AACE9B: _nc_first_db (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6E1E: _nc_read_entry2 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAF9F5: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE04: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_nc_first_db
+   fun:_nc_read_entry2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 60 bytes in 2 blocks are definitely lost in loss record 16 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x10C45F: ft_strjoin (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x10BBCE: get_prompt (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109589: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:ft_strjoin
+   fun:get_prompt
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 62 bytes in 2 blocks are definitely lost in loss record 17 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x10C45F: ft_strjoin (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x10BBE5: get_prompt (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109589: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:ft_strjoin
+   fun:get_prompt
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 74 bytes in 1 blocks are still reachable in loss record 18 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486F010: rl_set_prompt (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AA: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_set_prompt
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 74 bytes in 1 blocks are still reachable in loss record 19 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488102F: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48817D5: rl_expand_prompt (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486EFE5: rl_set_prompt (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AA: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_expand_prompt
+   fun:rl_set_prompt
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 78 bytes in 1 blocks are still reachable in loss record 20 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AAB1FF: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE1B: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 94 bytes in 1 blocks are still reachable in loss record 21 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AB1542: _nc_tparm_analyze (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB17CB: tparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB7274: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB74E9: _nc_trim_sgr0 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0538: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_nc_tparm_analyze
+   fun:tparm
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_trim_sgr0
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 97 bytes in 1 blocks are still reachable in loss record 22 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AACE04: _nc_first_db (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6E1E: _nc_read_entry2 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAF9F5: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE04: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_nc_first_db
+   fun:_nc_read_entry2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 120 bytes in 2 blocks are definitely lost in loss record 23 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x10C45F: ft_strjoin (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x10BBFC: get_prompt (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109589: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:ft_strjoin
+   fun:get_prompt
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 130 bytes in 2 blocks are definitely lost in loss record 24 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x10C45F: ft_strjoin (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x10BC13: get_prompt (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109589: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:ft_strjoin
+   fun:get_prompt
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 148 bytes in 2 blocks are definitely lost in loss record 25 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x10C45F: ft_strjoin (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x10BC2A: get_prompt (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109589: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:ft_strjoin
+   fun:get_prompt
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 156 bytes in 1 blocks are still reachable in loss record 26 of 66
+==3082==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AAD2C7: _nc_doalloc (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6522: _nc_read_termtype (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB691C: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6D13: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6E44: _nc_read_entry2 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAF9F5: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE04: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:realloc
+   fun:_nc_doalloc
+   fun:_nc_read_termtype
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_read_entry2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+}
+==3082== 256 bytes in 1 blocks are still reachable in loss record 27 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4870466: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 280 bytes in 1 blocks are still reachable in loss record 28 of 66
+==3082==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AAFDB7: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 496 bytes in 1 blocks are still reachable in loss record 29 of 66
+==3082==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AB678B: _nc_read_termtype (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB691C: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6D13: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6E44: _nc_read_entry2 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAF9F5: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE04: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_nc_read_termtype
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_read_entry2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+}
+==3082== 496 bytes in 1 blocks are still reachable in loss record 30 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AAB2D9: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE1B: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 755 bytes in 1 blocks are still reachable in loss record 31 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AB680B: _nc_read_termtype (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB691C: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6D13: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6E44: _nc_read_entry2 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAF9F5: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE04: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_nc_read_termtype
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_read_entry2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+}
+==3082== 1,024 bytes in 1 blocks are still reachable in loss record 32 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4880B8A: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48860E6: rl_redisplay (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486F0F6: readline_internal_setup (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704D3: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_redisplay
+   fun:readline_internal_setup
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 1,024 bytes in 1 blocks are still reachable in loss record 33 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4880BA0: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48860E6: rl_redisplay (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486F0F6: readline_internal_setup (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704D3: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_redisplay
+   fun:readline_internal_setup
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 1,024 bytes in 1 blocks are still reachable in loss record 34 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4880BE8: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48860E6: rl_redisplay (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486F0F6: readline_internal_setup (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704D3: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_redisplay
+   fun:readline_internal_setup
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 1,024 bytes in 1 blocks are still reachable in loss record 35 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4880C07: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48860E6: rl_redisplay (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486F0F6: readline_internal_setup (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704D3: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_redisplay
+   fun:readline_internal_setup
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 1,024 bytes in 1 blocks are still reachable in loss record 36 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4880C1F: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48860E6: rl_redisplay (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486F0F6: readline_internal_setup (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704D3: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_redisplay
+   fun:readline_internal_setup
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 1,024 bytes in 1 blocks are still reachable in loss record 37 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4880C37: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48860E6: rl_redisplay (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486F0F6: readline_internal_setup (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704D3: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_redisplay
+   fun:readline_internal_setup
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 1,536 bytes in 1 blocks are still reachable in loss record 38 of 66
+==3082==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4896041: xrealloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874944: rl_add_funmap_entry (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874998: rl_initialize_funmap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487021C: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:realloc
+   fun:xrealloc
+   fun:rl_add_funmap_entry
+   fun:rl_initialize_funmap
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 1,556 bytes in 1 blocks are still reachable in loss record 39 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AB5E82: _nc_read_termtype (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB691C: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6D13: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6E44: _nc_read_entry2 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAF9F5: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE04: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_nc_read_termtype
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_read_entry2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+}
+==3082== 2,032 bytes in 1 blocks are still reachable in loss record 40 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488B999: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 2,208 bytes in 138 blocks are still reachable in loss record 41 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48748F0: rl_add_funmap_entry (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874998: rl_initialize_funmap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487021C: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_add_funmap_entry
+   fun:rl_initialize_funmap
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 3,792 bytes in 1 blocks are still reachable in loss record 42 of 66
+==3082==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AAD2C7: _nc_doalloc (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6540: _nc_read_termtype (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB691C: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6D13: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB6E44: _nc_read_entry2 (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAF9F5: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE04: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:realloc
+   fun:_nc_doalloc
+   fun:_nc_read_termtype
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_read_entry2
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+}
+==3082== 3,792 bytes in 1 blocks are still reachable in loss record 43 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AAB1AF: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAFE1B: _nc_setupterm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0359: tgetent_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B75B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_setupterm
+   fun:tgetent_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 4,016 bytes in 1 blocks are still reachable in loss record 44 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488FA5B: add_history (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109C62: handle_input (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x1095AC: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:add_history
+   fun:handle_input
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 4,080 bytes in 1 blocks are still reachable in loss record 45 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488B9B9: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 4,112 bytes in 1 blocks are still reachable in loss record 46 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488AF45: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488B897: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 4,112 bytes in 1 blocks are still reachable in loss record 47 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488AFCA: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488B897: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 4,112 bytes in 1 blocks are still reachable in loss record 48 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488AFCA: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488B8A3: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 4,112 bytes in 1 blocks are still reachable in loss record 49 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488AFCA: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488B8AF: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 4,112 bytes in 1 blocks are still reachable in loss record 50 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486EF72: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4870274: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 4,112 bytes in 1 blocks are still reachable in loss record 51 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486EF72: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4870283: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 4,112 bytes in 1 blocks are still reachable in loss record 52 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486EF72: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48702A1: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 7,952 bytes in 1 blocks are still reachable in loss record 53 of 66
+==3082==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x4AABFA7: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AAC79F: _nc_find_type_entry (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x4AB0C9C: tgetstr_sp (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2)
+==3082==    by 0x488B79B: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   obj:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+   fun:_nc_find_type_entry
+   fun:tgetstr_sp
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 8,224 bytes in 2 blocks are still reachable in loss record 54 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488AFB7: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488B897: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 8,224 bytes in 2 blocks are still reachable in loss record 55 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488AF45: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488B8A3: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 8,224 bytes in 2 blocks are still reachable in loss record 56 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488AFB7: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488B8A3: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 8,224 bytes in 2 blocks are still reachable in loss record 57 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488AF45: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488B8AF: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 8,224 bytes in 2 blocks are still reachable in loss record 58 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488AFB7: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x488B8AF: _rl_init_terminal_io (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48701FF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:_rl_init_terminal_io
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 8,224 bytes in 2 blocks are still reachable in loss record 59 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486EF63: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4870274: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 8,224 bytes in 2 blocks are still reachable in loss record 60 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486EF63: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4870283: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 8,224 bytes in 2 blocks are still reachable in loss record 61 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486EF63: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48702A1: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 8,224 bytes in 2 blocks are still reachable in loss record 62 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48702BF: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 8,224 bytes in 2 blocks are still reachable in loss record 63 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48702D2: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 12,336 bytes in 3 blocks are still reachable in loss record 64 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486EF3A: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4870283: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 12,336 bytes in 3 blocks are still reachable in loss record 65 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487CF1D: rl_bind_keyseq_if_unbound_in_map (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x486EF3A: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48702A1: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_bind_keyseq_if_unbound_in_map
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== 28,784 bytes in 7 blocks are still reachable in loss record 66 of 66
+==3082==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3082==    by 0x489600C: xmalloc (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4874A91: rl_make_bare_keymap (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487BD79: rl_generic_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487DA92: rl_parse_and_bind (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x487DC6C: ??? (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x4870228: rl_initialize (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x48704AF: readline (in /usr/lib/x86_64-linux-gnu/libreadline.so.8.0)
+==3082==    by 0x109599: input_loop (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109640: minishell (in /mnt/e/42sp/minishell_project/minishell)
+==3082==    by 0x109290: main (in /mnt/e/42sp/minishell_project/minishell)
+==3082== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:rl_make_bare_keymap
+   fun:rl_generic_bind
+   fun:rl_parse_and_bind
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.0
+   fun:rl_initialize
+   fun:readline
+   fun:input_loop
+   fun:minishell
+   fun:main
+}
+==3082== LEAK SUMMARY:
+==3082==    definitely lost: 605 bytes in 15 blocks
+==3082==    indirectly lost: 0 bytes in 0 blocks
+==3082==      possibly lost: 0 bytes in 0 blocks
+==3082==    still reachable: 204,722 bytes in 215 blocks
+==3082==         suppressed: 0 bytes in 0 blocks
+==3082== 
+==3082== For lists of detected and suppressed errors, rerun with: -s
+==3082== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 0 from 0)
