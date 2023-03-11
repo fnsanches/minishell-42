@@ -212,11 +212,21 @@ void handle_fd(int fd[2], t_list *node);
 int handle_generate_output(t_list *node, t_data *data);
 int handle_generate_output_builtin(t_list *node, t_data *data);
 
+// cd builtin
+void handle_set_pwd_vars(t_data *data);
+int handle_change_dir_to_home(t_data *data);
+int handle_change_dir(t_cmd *cmd, t_data *data);
+
+// echo builtin
+int send_newline_flag(t_cmd *cmd);
+int has_next_arg(t_cmd *cmd, int i);
+
 // helper functions
 int ft_strchars_i(const char *s, char *set);
 char *ft_strcat(char *src, char *dest); // add to libft
 void clear_window(void);
 void print_nodes(t_data *data);
 int restrict_atoi(const char *str);
+char *ft_strnjoin(int argn, ...);
 
 #endif

@@ -60,11 +60,6 @@ int is_exit(t_cmd *command)
     return (0);
 }
 
-int exec_exit(t_cmd *cmd)
-{
-    ft_putendl_fd("exit", 2);
-    return (0);
-}
 // cd
 int is_cd(t_cmd *command)
 {
@@ -76,11 +71,6 @@ int is_cd(t_cmd *command)
     return (0);
 }
 
-int exec_cd(t_cmd *cmd, t_data *data)
-{
-    ft_putendl_fd("exit - cd", 2);
-    return (0);
-}
 // export
 int is_export(t_cmd *command)
 {
@@ -145,11 +135,6 @@ int is_echo(t_cmd *node)
     return (0);
 }
 
-int exec_echo(t_cmd *cmd)
-{
-    ft_putendl_fd("exit - echo", 2);
-    return (0);
-}
 // pwd
 int is_pwd(t_cmd *node)
 {
@@ -160,12 +145,6 @@ int is_pwd(t_cmd *node)
         return (0);
     if (ft_strncmp(cmd, "pwd", ft_strlen(cmd)) == 0 && ft_strlen(cmd) == 3)
         return (1);
-    return (0);
-}
-
-int exec_pwd(void)
-{
-    ft_putendl_fd("exit - pwd", 2);
     return (0);
 }
 

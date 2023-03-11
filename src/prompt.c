@@ -1,5 +1,7 @@
 #include "../inc/minishell.h"
 
+static void join_args(int argn, va_list argl, char **result);
+
 static char *get_home(t_data *data)
 {
     int i;
@@ -65,14 +67,44 @@ char *get_prompt(t_data *data)
     user = get_user(data);
     if (!user)
         user = ft_strdup("guest");
-    prompt = ft_strjoin(YELLOW, user);
-    prompt = ft_strjoin(prompt, ": ");
-    prompt = ft_strjoin(prompt, BLUE);
-    prompt = ft_strjoin(prompt, "[");
-    prompt = ft_strjoin(prompt, currwd);
-    prompt = ft_strjoin(prompt, "] $> ");
-    prompt = ft_strjoin(prompt, DEFAULT);
+    prompt = ft_strnjoin(8, YELLOW, user, ": ", BLUE, "[", currwd, "] $> ", DEFAULT);
     free(currwd);
     free(user);
     return (prompt);
+}
+
+char *ft_strnjoin(int argn, ...)
+{
+    char *result;
+    va_list argl;
+
+    if (argn == 0)
+        return (NULL);
+    va_start(argl, argn);
+    result = NULL;
+    join_args(argn, argl, &result);
+    va_end(argl);
+    return (result);
+}
+
+static void join_args(int argn, va_list argl, char **result)
+{
+    char *buf;
+    char *tmp;
+    int i;
+
+    i = -1;
+    while (++i < argn)
+    {
+        buf = va_arg(argl, char *);
+        if (i == 0)
+            *result = ft_strdup(buf);
+        else
+        {
+            tmp = ft_strjoin(*result, buf);
+            if (*result)
+                free(*result);
+            *result = tmp;
+        }
+    }
 }

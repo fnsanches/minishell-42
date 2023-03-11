@@ -264,7 +264,6 @@ int handle_input(t_data *data)
     add_history(data->input);
     if (!lexer(data))
         return (throw_error(QUOTE, 1, NULL));
-    print_matrix(data->args);
     parse_args(data);
     status = executor(data);
     clean(data);

@@ -178,7 +178,7 @@ char *get_string(char *delimiter)
         result = ft_strjoin(result, input);
         free(tmp);
         free(input);
-        input = readline("➜ ");
+        input = readline(">> ");
         if (!input)
         {
             printf("%s (wanted `%s\')\n", HDOC_WARN, delimiter);

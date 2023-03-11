@@ -1,8 +1,6 @@
 # TODO
 
-1- [ ] Tokenizar a string de entrada
- - [ ] Identificar os caracteres especiais
-2- [ ] Expansão de variáveis
+Erros -> heredoc -> segfault
 
 # Minishell
 

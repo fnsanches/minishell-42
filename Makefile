@@ -14,7 +14,8 @@ INCLUDE 		= ./inc/
 
 SRC				= minishell.c utils.c lexer_utils.c lexer_utils2.c \
 					expander_utils.c prompt.c \
-					parser.c parser_utils.c executor.c
+					parser.c parser_utils.c executor.c \
+					cd.c echo.c pwd.c exit.c
 
 				
 
