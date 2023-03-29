@@ -12,9 +12,9 @@
 
 #include "../../../includes/minishell.h"
 
-char *get_env(char *key, char **envp, int key_len)
+char	*get_env(char *key, char **envp, int key_len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (key_len < 0)
@@ -28,10 +28,10 @@ char *get_env(char *key, char **envp, int key_len)
 	return (NULL);
 }
 
-int get_env_index(char *key, char **envp)
+int	get_env_index(char *key, char **envp)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 0;
 	len = ft_strlen(key);

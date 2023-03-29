@@ -12,15 +12,15 @@
 
 #include "../../../includes/minishell.h"
 
-int has_next_arg(t_cmd *cmd, int i)
+int	has_next_arg(t_cmd *cmd, int i)
 {
 	return (cmd && cmd->full_cmd && cmd->full_cmd[i + 1]);
 }
 
-int send_newline_flag(t_cmd *cmd)
+int	send_newline_flag(t_cmd *cmd)
 {
-	int send_param;
-	int match_len;
+	int	send_param;
+	int	match_len;
 
 	if (!cmd || !cmd->full_cmd || !cmd->full_cmd[0] || !cmd->full_cmd[1])
 		return (0);
@@ -29,9 +29,9 @@ int send_newline_flag(t_cmd *cmd)
 	return (send_param);
 }
 
-int execute_echo(t_cmd *cmd)
+int	execute_echo(t_cmd *cmd)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (send_newline_flag(cmd))
@@ -48,9 +48,9 @@ int execute_echo(t_cmd *cmd)
 	return (1);
 }
 
-int is_echo(t_cmd *node)
+int	is_echo(t_cmd *node)
 {
-	char *cmd;
+	char	*cmd;
 
 	cmd = node->full_cmd[0];
 	if (!cmd)

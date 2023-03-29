@@ -12,10 +12,10 @@
 
 #include "../../../includes/minishell.h"
 
-char **dup_matrix(char **matrix)
+char	**dup_matrix(char **matrix)
 {
-	char **result;
-	int i;
+	char	**result;
+	int		i;
 
 	i = 0;
 	result = malloc(sizeof(char *) * (matrix_len(matrix) + 1));

@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-int should_remove(char *str, int sq_open, int dq_open, int i)
+int	should_remove(char *str, int sq_open, int dq_open, int i)
 {
 	if (str[i] == DOUBLE_QUOTE && !sq_open)
 		return (1);
@@ -21,12 +21,12 @@ int should_remove(char *str, int sq_open, int dq_open, int i)
 	return (0);
 }
 
-static int count_items_to_remove(char *str)
+static int	count_items_to_remove(char *str)
 {
-	int result;
-	int dq_open;
-	int sq_open;
-	int i;
+	int	result;
+	int	dq_open;
+	int	sq_open;
+	int	i;
 
 	i = 0;
 	result = 0;
@@ -43,12 +43,12 @@ static int count_items_to_remove(char *str)
 	return (result);
 }
 
-char *trim_arg(char *str, int sq_open, int dq_open)
+char	*trim_arg(char *str, int sq_open, int dq_open)
 {
-	char *result;
-	int to_remove;
-	int i;
-	int j;
+	char	*result;
+	int		to_remove;
+	int		i;
+	int		j;
 
 	j = 0;
 	i = 0;
@@ -66,11 +66,11 @@ char *trim_arg(char *str, int sq_open, int dq_open)
 	return (result);
 }
 
-char **trim_args(char **args)
+char	**trim_args(char **args)
 {
-	char **result;
-	char *arg_trimmed;
-	int i;
+	char	**result;
+	char	*arg_trimmed;
+	int		i;
 
 	i = 0;
 	result = dup_matrix(args);

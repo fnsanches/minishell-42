@@ -12,12 +12,12 @@
 
 #include "../../../../includes/minishell.h"
 
-char *find_command_path(char *cmd, t_data *data)
+char	*find_command_path(char *cmd, t_data *data)
 {
-	char *temp;
-	char *result;
-	char **env_splited;
-	int i;
+	char	*temp;
+	char	*result;
+	char	**env_splited;
+	int		i;
 
 	temp = get_env("PATH", data->envp, 4);
 	env_splited = ft_split(temp, ':');
@@ -41,10 +41,10 @@ char *find_command_path(char *cmd, t_data *data)
 	return (NULL);
 }
 
-char *set_absolute_path(t_cmd *cmd)
+char	*set_absolute_path(t_cmd *cmd)
 {
-	char *result;
-	char **s;
+	char	*result;
+	char	**s;
 
 	s = ft_split(*cmd->full_cmd, '/');
 	result = ft_strdup(*cmd->full_cmd);
@@ -54,9 +54,9 @@ char *set_absolute_path(t_cmd *cmd)
 	return (result);
 }
 
-int is_current_folder_dir(t_cmd *cmd)
+int	is_current_folder_dir(t_cmd *cmd)
 {
-	DIR *dir;
+	DIR	*dir;
 
 	dir = NULL;
 	if (!cmd || !cmd->full_cmd)
@@ -68,12 +68,12 @@ int is_current_folder_dir(t_cmd *cmd)
 	return (1);
 }
 
-int send_absolute_path_to_command(t_cmd *cmd)
+int	send_absolute_path_to_command(t_cmd *cmd)
 {
 	return (cmd && cmd->full_cmd && ft_strchr(*cmd->full_cmd, '/'));
 }
 
-int send_relative_path_to_command(t_cmd *cmd)
+int	send_relative_path_to_command(t_cmd *cmd)
 {
 	return (!is_builtin(cmd) && cmd && cmd->full_cmd);
 }

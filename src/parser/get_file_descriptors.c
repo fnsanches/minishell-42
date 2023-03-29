@@ -12,9 +12,9 @@
 
 #include "../../includes/minishell.h"
 
-int open_file(char *path, int oldfd, int is_write, int is_append)
+int	open_file(char *path, int oldfd, int is_write, int is_append)
 {
-	int fd;
+	int	fd;
 
 	if (oldfd > 2)
 		close(oldfd);
@@ -37,9 +37,9 @@ int open_file(char *path, int oldfd, int is_write, int is_append)
 	return (fd);
 }
 
-int set_infile_fd(t_cmd *node, char **args, int i)
+int	set_infile_fd(t_cmd *node, char **args, int i)
 {
-	int file_position;
+	int	file_position;
 
 	file_position = i + 1;
 	if (!args[file_position])
@@ -53,9 +53,9 @@ int set_infile_fd(t_cmd *node, char **args, int i)
 	return (2);
 }
 
-int set_heredoc_fd(t_cmd *node, char **args, int i)
+int	set_heredoc_fd(t_cmd *node, char **args, int i)
 {
-	int delimiter_position;
+	int	delimiter_position;
 
 	delimiter_position = i + 2;
 	if (!args[delimiter_position])
@@ -69,9 +69,9 @@ int set_heredoc_fd(t_cmd *node, char **args, int i)
 	return (3);
 }
 
-int set_outfile_fd(t_cmd *node, char **args, int i)
+int	set_outfile_fd(t_cmd *node, char **args, int i)
 {
-	int file_position;
+	int	file_position;
 
 	file_position = i + 1;
 	if (!args[file_position])
@@ -85,9 +85,9 @@ int set_outfile_fd(t_cmd *node, char **args, int i)
 	return (2);
 }
 
-int set_append_outfile_fd(t_cmd *node, char **args, int i)
+int	set_append_outfile_fd(t_cmd *node, char **args, int i)
 {
-	int file_position;
+	int	file_position;
 
 	file_position = i + 2;
 	if (!args[file_position])

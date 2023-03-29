@@ -12,7 +12,7 @@
 
 #include "../includes/minishell.h"
 
-void handle_sigint(int sig)
+void	handle_sigint(int sig)
 {
 	if (sig == SIGINT)
 	{
@@ -23,14 +23,14 @@ void handle_sigint(int sig)
 	}
 }
 
-void set_default_signal_handlers(void)
+void	set_default_signal_handlers(void)
 {
 	signal(SIGINT, handle_sigint);
 	signal(SIGQUIT, SIG_IGN);
 	signal(SIGTSTP, SIG_IGN);
 }
 
-void set_child_process_signal_handlers(void)
+void	set_child_process_signal_handlers(void)
 {
 	signal(SIGINT, SIG_DFL);
 	signal(SIGQUIT, SIG_DFL);

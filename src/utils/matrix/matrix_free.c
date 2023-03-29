@@ -12,9 +12,9 @@
 
 #include "../../../includes/minishell.h"
 
-void free_matrix(char **matrix)
+void	free_matrix(char **matrix)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (matrix && matrix[i])

@@ -12,9 +12,9 @@
 
 #include "../../../includes/minishell.h"
 
-int execute_pwd(void)
+int	execute_pwd(void)
 {
-	char *cwd;
+	char	*cwd;
 
 	cwd = getcwd(NULL, 0);
 	printf("%s\n", cwd);
@@ -22,9 +22,9 @@ int execute_pwd(void)
 	return (1);
 }
 
-int is_pwd(t_cmd *node)
+int	is_pwd(t_cmd *node)
 {
-	char *cmd;
+	char	*cmd;
 
 	cmd = node->full_cmd[0];
 	if (!cmd)

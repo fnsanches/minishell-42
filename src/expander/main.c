@@ -12,11 +12,11 @@
 
 #include "../../includes/minishell.h"
 
-int should_var_be_expanded(char *str, int i, int sq_open, int dq_open)
+int	should_var_be_expanded(char *str, int i, int sq_open, int dq_open)
 {
-	int found_forbidden_char_after_dollar;
-	int not_has_dq_case_trated;
-	int has_dq_case_trated;
+	int	found_forbidden_char_after_dollar;
+	int	not_has_dq_case_trated;
+	int	has_dq_case_trated;
 
 	if (sq_open || str[i] != '$' || !str[i + 1])
 		return (0);
@@ -28,11 +28,11 @@ int should_var_be_expanded(char *str, int i, int sq_open, int dq_open)
 	return (not_has_dq_case_trated || has_dq_case_trated);
 }
 
-char *expand_vars(char *str, t_data *data)
+char	*expand_vars(char *str, t_data *data)
 {
-	int sq_open;
-	int dq_open;
-	int i;
+	int	sq_open;
+	int	dq_open;
+	int	i;
 
 	sq_open = 0;
 	dq_open = 0;
@@ -48,7 +48,7 @@ char *expand_vars(char *str, t_data *data)
 	return (str);
 }
 
-int should_path_be_expanded(char *str, int i, int sq_open, int dq_open)
+int	should_path_be_expanded(char *str, int i, int sq_open, int dq_open)
 {
 	if (sq_open || dq_open)
 		return (0);
@@ -59,11 +59,11 @@ int should_path_be_expanded(char *str, int i, int sq_open, int dq_open)
 	return (1);
 }
 
-char *expand_path(char *str, t_data *data)
+char	*expand_path(char *str, t_data *data)
 {
-	int sq_open;
-	int dq_open;
-	int i;
+	int	sq_open;
+	int	dq_open;
+	int	i;
 
 	sq_open = 0;
 	dq_open = 0;
@@ -79,9 +79,9 @@ char *expand_path(char *str, t_data *data)
 	return (str);
 }
 
-void expand_args(char **args, t_data *data)
+void	expand_args(char **args, t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (args[i])

@@ -12,9 +12,9 @@
 
 #include "../../../includes/minishell.h"
 
-int is_builtin(t_cmd *node)
+int	is_builtin(t_cmd *node)
 {
-	char *cmd;
+	char	*cmd;
 
 	cmd = node->full_cmd[0];
 	if (!cmd)
@@ -40,9 +40,9 @@ int is_builtin(t_cmd *node)
 	return (0);
 }
 
-int is_config_builtin(t_cmd *node)
+int	is_config_builtin(t_cmd *node)
 {
-	char *cmd;
+	char	*cmd;
 
 	cmd = node->full_cmd[0];
 	if (!cmd)
@@ -62,9 +62,9 @@ int is_config_builtin(t_cmd *node)
 	return (0);
 }
 
-int is_generate_output_builtin(t_cmd *node)
+int	is_generate_output_builtin(t_cmd *node)
 {
-	char *cmd;
+	char	*cmd;
 
 	cmd = node->full_cmd[0];
 	if (!cmd)

@@ -12,10 +12,10 @@
 
 #include "../../includes/minishell.h"
 
-static int ft_count_words(const char *s, char *set, int count)
+static int	ft_count_words(const char *s, char *set, int count)
 {
-	int q[2];
-	int i;
+	int	q[2];
+	int	i;
 
 	i = 0;
 	q[0] = 0;
@@ -40,9 +40,9 @@ static int ft_count_words(const char *s, char *set, int count)
 	return (count);
 }
 
-static char **ft_fill_array(char **aux, const char *s, char *set, int i[3])
+static char	**ft_fill_array(char **aux, const char *s, char *set, int i[3])
 {
-	int q[2];
+	int	q[2];
 
 	q[0] = 0;
 	q[1] = 0;
@@ -67,11 +67,11 @@ static char **ft_fill_array(char **aux, const char *s, char *set, int i[3])
 	return (aux);
 }
 
-char **split_quotes(const char *s, char *set)
+char	**split_quotes(const char *s, char *set)
 {
-	char **result;
-	int nwords;
-	int i[3];
+	char	**result;
+	int		nwords;
+	int		i[3];
 
 	i[0] = 0;
 	i[1] = 0;

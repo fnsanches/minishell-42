@@ -12,11 +12,11 @@
 
 #include "../../../includes/minishell.h"
 
-char *join_env(char *key, char *value)
+char	*join_env(char *key, char *value)
 {
-	char *aux1;
-	char *aux2;
-	char *result;
+	char	*aux1;
+	char	*aux2;
+	char	*result;
 
 	aux1 = ft_strdup(key);
 	aux2 = ft_strcat(aux1, "=");
@@ -26,10 +26,10 @@ char *join_env(char *key, char *value)
 	return (result);
 }
 
-char **change_env_value(int index, char *key, char *value, char **envp)
+char	**change_env_value(int index, char *key, char *value, char **envp)
 {
-	char *new_value;
-	char **result;
+	char	*new_value;
+	char	**result;
 
 	new_value = join_env(key, value);
 	result = matrix_replace(envp, index, new_value);
@@ -37,10 +37,10 @@ char **change_env_value(int index, char *key, char *value, char **envp)
 	return (result);
 }
 
-char **add_new_env(char *key, char *value, char **envp)
+char	**add_new_env(char *key, char *value, char **envp)
 {
-	char *variable_joined;
-	char **result;
+	char	*variable_joined;
+	char	**result;
 
 	variable_joined = join_env(key, value);
 	result = matrix_push(envp, variable_joined);
@@ -48,9 +48,9 @@ char **add_new_env(char *key, char *value, char **envp)
 	return (result);
 }
 
-char **set_env(char *key, char *value, char **envp)
+char	**set_env(char *key, char *value, char **envp)
 {
-	int env_index;
+	int	env_index;
 
 	env_index = get_env_index(key, envp);
 	if (env_index > -1)

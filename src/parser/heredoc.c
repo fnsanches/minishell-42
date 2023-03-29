@@ -12,11 +12,11 @@
 
 #include "../../includes/minishell.h"
 
-int input_is_delimiter_or_user_quit(char *input, char *delimiter)
+int	input_is_delimiter_or_user_quit(char *input, char *delimiter)
 {
-	int is_delimiter;
-	int input_len_eq_delimiter_len;
-	size_t input_len;
+	int		is_delimiter;
+	int		input_len_eq_delimiter_len;
+	size_t	input_len;
 
 	if (!input)
 		return (0);
@@ -30,11 +30,11 @@ int input_is_delimiter_or_user_quit(char *input, char *delimiter)
 	return (0);
 }
 
-char *get_string(char *delimiter)
+char	*get_string(char *delimiter)
 {
-	char *result;
-	char *input;
-	char *tmp;
+	char	*result;
+	char	*input;
+	char	*tmp;
 
 	result = NULL;
 	input = NULL;
@@ -48,7 +48,7 @@ char *get_string(char *delimiter)
 		if (!input)
 		{
 			printf("%s (wanted `%s\')\n", HDOC_WARN, delimiter);
-			break;
+			break ;
 		}
 		tmp = input;
 		input = ft_strjoin(input, "\n");
@@ -58,10 +58,10 @@ char *get_string(char *delimiter)
 	return (result);
 }
 
-int get_heredoc(char *delimiter)
+int	get_heredoc(char *delimiter)
 {
-	int fd[2];
-	char *input_str;
+	int		fd[2];
+	char	*input_str;
 
 	input_str = NULL;
 	g_status = 0;

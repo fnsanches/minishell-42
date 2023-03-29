@@ -12,15 +12,15 @@
 
 #include "../../../includes/minishell.h"
 
-int execute_env(t_data *data)
+int	execute_env(t_data *data)
 {
 	print_matrix(data->envp);
 	return (1);
 }
 
-int is_env(t_cmd *node)
+int	is_env(t_cmd *node)
 {
-	char *cmd;
+	char	*cmd;
 
 	cmd = node->full_cmd[0];
 	if (!cmd)

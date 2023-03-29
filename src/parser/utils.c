@@ -12,9 +12,9 @@
 
 #include "../../includes/minishell.h"
 
-t_cmd *new_node(void)
+t_cmd	*new_node(void)
 {
-	t_cmd *node;
+	t_cmd	*node;
 
 	node = malloc(sizeof(t_cmd));
 	if (!node)
@@ -26,11 +26,11 @@ t_cmd *new_node(void)
 	return (node);
 }
 
-int get_argument_type(char **args, int i)
+int	get_argument_type(char **args, int i)
 {
-	int curr_arg;
-	int has_next_arg;
-	int next_arg;
+	int	curr_arg;
+	int	has_next_arg;
+	int	next_arg;
 
 	if (!args[i])
 		return (NO_ARG);
@@ -51,18 +51,18 @@ int get_argument_type(char **args, int i)
 	return (NORMAL_ARG);
 }
 
-void quit_parsing(t_data *data)
+void	quit_parsing(t_data *data)
 {
 	ft_lstclear(&data->cmds, free_node);
 }
 
-int empty_pipe_error(void)
+int	empty_pipe_error(void)
 {
 	throw_error(PIPENDERR, 2, NULL);
 	return (-1);
 }
 
-int empty_redirection_error(void)
+int	empty_redirection_error(void)
 {
 	throw_error(OPENFILEERR, 2, NULL);
 	return (-1);

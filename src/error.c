@@ -12,14 +12,14 @@
 
 #include "../includes/minishell.h"
 
-void print_error(char *error)
+void	print_error(char *error)
 {
 	ft_putstr_fd("\033[0;31m", 2);
 	ft_putstr_fd(error, 2);
 	ft_putstr_fd("\033[0m", 2);
 }
 
-int throw_error(int err_type, int error_code, char *message)
+int	throw_error(int err_type, int error_code, char *message)
 {
 	g_status = error_code;
 	if (err_type == FORKERR)

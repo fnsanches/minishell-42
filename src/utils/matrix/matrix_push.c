@@ -12,11 +12,11 @@
 
 #include "../../../includes/minishell.h"
 
-char **matrix_push(char **matrix, char *new)
+char	**matrix_push(char **matrix, char *new)
 {
-	char **result;
-	int i;
-	int len;
+	char	**result;
+	int		i;
+	int		len;
 
 	i = 0;
 	if (!new)

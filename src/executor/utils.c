@@ -12,14 +12,14 @@
 
 #include "../../includes/minishell.h"
 
-int has_next(t_list *node)
+int	has_next(t_list *node)
 {
 	return (node->next != NULL);
 }
 
-void wait_child_processes_exit(t_data *data)
+void	wait_child_processes_exit(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < ft_lstsize(data->cmds))

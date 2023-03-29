@@ -12,9 +12,9 @@
 
 #include "../includes/minishell.h"
 
-int handle_input(t_data *data)
+int	handle_input(t_data *data)
 {
-	int status;
+	int	status;
 
 	status = 1;
 	if (is_invalid_input(data->input))

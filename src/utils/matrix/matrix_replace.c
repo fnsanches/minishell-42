@@ -12,7 +12,7 @@
 
 #include "../../../includes/minishell.h"
 
-char **matrix_replace(char **matrix, int i, char *new_value)
+char	**matrix_replace(char **matrix, int i, char *new_value)
 {
 	if (!matrix || !matrix[i])
 		return (NULL);

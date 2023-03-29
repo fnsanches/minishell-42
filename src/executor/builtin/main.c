@@ -12,9 +12,9 @@
 
 #include "../../../includes/minishell.h"
 
-int handle_config_builtin(t_list *node, t_data *data)
+int	handle_config_builtin(t_list *node, t_data *data)
 {
-	t_cmd *command;
+	t_cmd	*command;
 
 	command = node->content;
 	if (is_exit(command))
@@ -28,9 +28,9 @@ int handle_config_builtin(t_list *node, t_data *data)
 	return (1);
 }
 
-int handle_generate_output_builtin(t_list *node, t_data *data)
+int	handle_generate_output_builtin(t_list *node, t_data *data)
 {
-	t_cmd *command;
+	t_cmd	*command;
 
 	command = node->content;
 	if (is_env(command))

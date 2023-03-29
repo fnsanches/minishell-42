@@ -12,16 +12,16 @@
 
 #include "../../../../includes/minishell.h"
 
-int can_execute_in_child_process(t_cmd *cmd)
+int	can_execute_in_child_process(t_cmd *cmd)
 {
 	if (is_builtin(cmd))
 		return (1);
 	return (cmd->cmd_path && access(cmd->cmd_path, X_OK) == 0);
 }
 
-int handle_redirections(t_list *node, int fd[2])
+int	handle_redirections(t_list *node, int fd[2])
 {
-	t_cmd *cmd;
+	t_cmd	*cmd;
 
 	cmd = node->content;
 	if (cmd->infile != STDIN_FILENO)

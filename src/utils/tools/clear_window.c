@@ -12,7 +12,7 @@
 
 #include "../../../includes/minishell.h"
 
-void clear_window(void)
+void	clear_window(void)
 {
 	printf("\e[1;1H\e[2J");
 }

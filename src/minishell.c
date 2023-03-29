@@ -6,17 +6,17 @@
 /*   By: fsanches <fsanches@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 20:49:51 by fsanches          #+#    #+#             */
-/*   Updated: 2023/03/27 21:06:40 by fsanches         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:08:49 by fsanches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-int g_status;
+int		g_status;
 
-pid_t get_pid(t_data *result)
+pid_t	get_pid(t_data *result)
 {
-	pid_t pid;
+	pid_t	pid;
 
 	pid = fork();
 	if (pid < 0)
@@ -33,7 +33,7 @@ pid_t get_pid(t_data *result)
 	return (pid - 1);
 }
 
-void init_vars(t_data *data, char *program_name)
+void	init_vars(t_data *data, char *program_name)
 {
 	init_pwd(data);
 	init_shlvl(data);
@@ -41,9 +41,9 @@ void init_vars(t_data *data, char *program_name)
 	init_executable(data, program_name);
 }
 
-t_data init_data(char **argv, char **envp)
+t_data	init_data(char **argv, char **envp)
 {
-	t_data result;
+	t_data	result;
 
 	result.input = NULL;
 	result.cmds = NULL;
@@ -55,9 +55,9 @@ t_data init_data(char **argv, char **envp)
 	return (result);
 }
 
-void input_loop(t_data *data)
+void	input_loop(t_data *data)
 {
-	char *prompt;
+	char	*prompt;
 
 	clear_window();
 	while (data->running)
@@ -70,9 +70,9 @@ void input_loop(t_data *data)
 	}
 }
 
-int minishell(char **argv, char **envp)
+int	minishell(char **argv, char **envp)
 {
-	t_data data;
+	t_data	data;
 
 	data = init_data(argv, envp);
 	input_loop(&data);

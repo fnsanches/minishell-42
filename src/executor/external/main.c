@@ -12,11 +12,11 @@
 
 #include "../../../includes/minishell.h"
 
-void handle_file_descriptors(int fd[2], t_list *node)
+void	handle_file_descriptors(int fd[2], t_list *node)
 {
-	t_cmd *command;
-	t_cmd *next_command;
-	t_list *next_node;
+	t_cmd	*command;
+	t_cmd	*next_command;
+	t_list	*next_node;
 
 	command = node->content;
 	next_node = node->next;
@@ -35,9 +35,9 @@ void handle_file_descriptors(int fd[2], t_list *node)
 		close(command->outfile);
 }
 
-int handle_generate_output(t_list *node, t_data *data)
+int	handle_generate_output(t_list *node, t_data *data)
 {
-	int fd[2];
+	int	fd[2];
 
 	handle_cmd_path(data, node);
 	if (pipe(fd) == -1)

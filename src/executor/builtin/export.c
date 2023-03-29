@@ -12,10 +12,10 @@
 
 #include "../../../includes/minishell.h"
 
-int export_error(char *variable)
+int	export_error(char *variable)
 {
-	char *error_msg;
-	char *aux;
+	char	*error_msg;
+	char	*aux;
 
 	aux = ft_strdup("minishell: export: `");
 	error_msg = ft_strjoin(NULL, aux);
@@ -29,13 +29,13 @@ int export_error(char *variable)
 	return (1);
 }
 
-int execute_export(t_cmd *cmd, t_data *data)
+int	execute_export(t_cmd *cmd, t_data *data)
 {
-	char *variable_joined;
-	int equal_sign_index;
-	int to_copy;
-	char *key;
-	char *value;
+	char	*variable_joined;
+	int		equal_sign_index;
+	int		to_copy;
+	char	*key;
+	char	*value;
 
 	if (!cmd || !cmd->full_cmd[1])
 		return (1);
@@ -52,9 +52,9 @@ int execute_export(t_cmd *cmd, t_data *data)
 	return (1);
 }
 
-int is_export(t_cmd *node)
+int	is_export(t_cmd *node)
 {
-	char *cmd;
+	char	*cmd;
 
 	cmd = node->full_cmd[0];
 	if (!cmd)

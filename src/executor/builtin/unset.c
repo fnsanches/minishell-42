@@ -12,10 +12,10 @@
 
 #include "../../../includes/minishell.h"
 
-int execute_unset(t_cmd *cmd, t_data *data)
+int	execute_unset(t_cmd *cmd, t_data *data)
 {
-	char *env_to_remove;
-	int index_to_remove;
+	char	*env_to_remove;
+	int		index_to_remove;
 
 	if (!cmd || !cmd->full_cmd[1])
 		return (1);
@@ -27,9 +27,9 @@ int execute_unset(t_cmd *cmd, t_data *data)
 	return (1);
 }
 
-int is_unset(t_cmd *node)
+int	is_unset(t_cmd *node)
 {
-	char *cmd;
+	char	*cmd;
 
 	cmd = node->full_cmd[0];
 	if (!cmd)

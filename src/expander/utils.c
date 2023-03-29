@@ -12,13 +12,13 @@
 
 #include "../../includes/minishell.h"
 
-char *get_substr_var(char *str, int i, t_data *data)
+char	*get_substr_var(char *str, int i, t_data *data)
 {
-	char *aux;
-	int pos;
-	char *path;
-	char *var;
-	int var_len;
+	char	*aux;
+	int		pos;
+	char	*path;
+	char	*var;
+	int		var_len;
 
 	pos = ft_strchars_i(str + i, "|\"\'$?>< ") + (ft_strchr("$?", str[i]) != 0);
 	if (pos == -1)
@@ -39,11 +39,11 @@ char *get_substr_var(char *str, int i, t_data *data)
 	return (aux);
 }
 
-char *get_substr_path(char *str, int i, t_data *data)
+char	*get_substr_path(char *str, int i, t_data *data)
 {
-	char *aux;
-	char *path;
-	char *var;
+	char	*aux;
+	char	*path;
+	char	*var;
 
 	aux = ft_substr(str, 0, i);
 	var = get_env("HOME", data->envp, 4);

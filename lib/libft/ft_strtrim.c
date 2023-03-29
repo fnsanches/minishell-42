@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int includes(const char *set, char c)
+static int	includes(const char *set, char c)
 {
 	while (*set)
 		if (*set++ == c)
@@ -20,11 +20,11 @@ static int includes(const char *set, char c)
 	return (1);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t start_index;
-	size_t end_index;
-	char *result;
+	size_t	start_index;
+	size_t	end_index;
+	char	*result;
 
 	if (!s1)
 		return (NULL);

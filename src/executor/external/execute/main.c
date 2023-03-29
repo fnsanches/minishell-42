@@ -12,9 +12,9 @@
 
 #include "../../../../includes/minishell.h"
 
-int execute_command_in_child_process(t_list *node, t_data *data)
+int	execute_command_in_child_process(t_list *node, t_data *data)
 {
-	t_cmd *cmd;
+	t_cmd	*cmd;
 
 	cmd = node->content;
 	set_child_process_signal_handlers();
@@ -24,7 +24,7 @@ int execute_command_in_child_process(t_list *node, t_data *data)
 	return (1);
 }
 
-void handle_child_process(t_list *node, t_data *data, int fd[2])
+void	handle_child_process(t_list *node, t_data *data, int fd[2])
 {
 	handle_redirections(node, fd);
 	close(fd[READ_END]);
@@ -35,9 +35,9 @@ void handle_child_process(t_list *node, t_data *data, int fd[2])
 	exit(g_status);
 }
 
-void handle_execution(t_list *node, t_data *data, int fd[2])
+void	handle_execution(t_list *node, t_data *data, int fd[2])
 {
-	pid_t pid;
+	pid_t	pid;
 
 	pid = fork();
 	if (pid < 0)
@@ -52,13 +52,13 @@ void handle_execution(t_list *node, t_data *data, int fd[2])
 	}
 }
 
-void execute(t_list *node, t_data *data, int fd[2])
+void	execute(t_list *node, t_data *data, int fd[2])
 {
-	t_cmd *cmd;
+	t_cmd	*cmd;
 
 	cmd = node->content;
 	if (cmd->infile == -1 || cmd->outfile == -1)
-		return;
+		return ;
 	if (can_execute_in_child_process(cmd))
 		handle_execution(node, data, fd);
 }

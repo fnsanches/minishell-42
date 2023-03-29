@@ -12,7 +12,7 @@
 
 #include "../includes/minishell.h"
 
-int main(int argc, char **argv, char **envp)
+int	main(int argc, char **argv, char **envp)
 {
 	if (argc != 1)
 		return (throw_error(0, 1, "No arguments in this program"));

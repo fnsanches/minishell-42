@@ -12,9 +12,9 @@
 
 #include "../../../includes/minishell.h"
 
-int ft_strchars_i(const char *s, char *set)
+int	ft_strchars_i(const char *s, char *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!s)

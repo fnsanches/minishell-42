@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-static int count_words(const char *str, char c);
-static char *dup_word(const char *str, int start, int finish);
-static void free_result(char **result, size_t j);
-static char **fill_result(char **result, const char *s, char c);
+static int	count_words(const char *str, char c);
+static char	*dup_word(const char *str, int start, int finish);
+static void	free_result(char **result, size_t j);
+static char	**fill_result(char **result, const char *s, char c);
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **result;
+	char	**result;
 
 	if (!s)
 		return (0);
@@ -30,10 +30,10 @@ char **ft_split(char const *s, char c)
 	return (result);
 }
 
-static int count_words(const char *str, char c)
+static int	count_words(const char *str, char c)
 {
-	int i;
-	int trigger;
+	int	i;
+	int	trigger;
 
 	i = 0;
 	trigger = 0;
@@ -51,10 +51,10 @@ static int count_words(const char *str, char c)
 	return (i);
 }
 
-static char *dup_word(const char *str, int start, int finish)
+static char	*dup_word(const char *str, int start, int finish)
 {
-	char *word;
-	int i;
+	char	*word;
+	int		i;
 
 	i = 0;
 	word = malloc((finish - start + 1) * sizeof(char));
@@ -64,7 +64,7 @@ static char *dup_word(const char *str, int start, int finish)
 	return (word);
 }
 
-static void free_result(char **result, size_t j)
+static void	free_result(char **result, size_t j)
 {
 	while (j--)
 	{
@@ -73,11 +73,11 @@ static void free_result(char **result, size_t j)
 	free(result);
 }
 
-static char **fill_result(char **result, const char *s, char c)
+static char	**fill_result(char **result, const char *s, char c)
 {
-	size_t i;
-	size_t j;
-	int dup_start_index;
+	size_t	i;
+	size_t	j;
+	int		dup_start_index;
 
 	i = 0;
 	j = 0;

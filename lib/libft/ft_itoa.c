@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static int get_len(long n)
+static int	get_len(long n)
 {
-	size_t result;
+	size_t	result;
 
 	result = 0;
 	if (n < 0)
@@ -30,7 +30,7 @@ static int get_len(long n)
 	return (result);
 }
 
-static char *generate(char *result, long nbr, int len, int isneg)
+static char	*generate(char *result, long nbr, int len, int isneg)
 {
 	if (nbr == 0)
 		return (result = ft_strdup("0"));
@@ -56,12 +56,12 @@ static char *generate(char *result, long nbr, int len, int isneg)
 	return (result);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int len;
-	char *result;
-	long nbr;
-	int isneg;
+	int		len;
+	char	*result;
+	long	nbr;
+	int		isneg;
 
 	nbr = n;
 	len = get_len(nbr);

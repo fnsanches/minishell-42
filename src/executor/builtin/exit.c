@@ -12,7 +12,7 @@
 
 #include "../../../includes/minishell.h"
 
-int execute_exit(t_cmd *cmd)
+int	execute_exit(t_cmd *cmd)
 {
 	ft_putendl_fd("exit", 2);
 	if (!cmd->full_cmd || !cmd->full_cmd[1])
@@ -37,9 +37,9 @@ int execute_exit(t_cmd *cmd)
 	return (0);
 }
 
-int is_exit(t_cmd *node)
+int	is_exit(t_cmd *node)
 {
-	char *cmd;
+	char	*cmd;
 
 	cmd = node->full_cmd[0];
 	if (!cmd)

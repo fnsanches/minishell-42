@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-int lexer(t_data *data)
+int	lexer(t_data *data)
 {
 	data->args = split_quotes(data->input, " ");
 	if (!data->args)

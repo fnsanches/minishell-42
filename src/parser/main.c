@@ -12,9 +12,9 @@
 
 #include "../../includes/minishell.h"
 
-void parse_args(t_data *data)
+void	parse_args(t_data *data)
 {
 	if (!data->args)
-		return;
+		return ;
 	fill_nodes(data);
 }

@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *result;
-	size_t s1_len;
-	size_t s2_len;
-	size_t result_len;
+	char	*result;
+	size_t	s1_len;
+	size_t	s2_len;
+	size_t	result_len;
 
 	if (!s1 && !s2)
 		return (ft_strdup(""));

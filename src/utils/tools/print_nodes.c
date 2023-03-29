@@ -12,11 +12,11 @@
 
 #include "../../../includes/minishell.h"
 
-void print_nodes(t_data *data)
+void	print_nodes(t_data *data)
 {
-	int i;
-	t_cmd *curr;
-	t_list *curr_node;
+	int		i;
+	t_cmd	*curr;
+	t_list	*curr_node;
 
 	i = 1;
 	curr_node = data->cmds;

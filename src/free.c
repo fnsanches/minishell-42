@@ -12,14 +12,14 @@
 
 #include "../includes/minishell.h"
 
-void free_data(t_data *data)
+void	free_data(t_data *data)
 {
 	free_matrix(data->envp);
 }
 
-void free_node(void *node)
+void	free_node(void *node)
 {
-	t_cmd *cmd;
+	t_cmd	*cmd;
 
 	cmd = node;
 	free_matrix(cmd->full_cmd);
@@ -31,7 +31,7 @@ void free_node(void *node)
 	free(cmd);
 }
 
-void clean(t_data *data)
+void	clean(t_data *data)
 {
 	if (data && data->args)
 		free_matrix(data->args);

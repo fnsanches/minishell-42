@@ -12,9 +12,9 @@
 
 #include "../../../includes/minishell.h"
 
-int matrix_len(char **matrix)
+int	matrix_len(char **matrix)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (matrix && matrix[i])

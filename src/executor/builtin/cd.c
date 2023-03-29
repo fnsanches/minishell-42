@@ -12,10 +12,10 @@
 
 #include "../../../includes/minishell.h"
 
-void handle_set_pwd_vars(t_data *data)
+void	handle_set_pwd_vars(t_data *data)
 {
-	char *cwd;
-	char *current_pwd;
+	char	*cwd;
+	char	*current_pwd;
 
 	cwd = getcwd(NULL, 0);
 	current_pwd = get_env("PWD", data->envp, 3);
@@ -25,9 +25,9 @@ void handle_set_pwd_vars(t_data *data)
 	free(cwd);
 }
 
-int handle_change_dir_to_home(t_data *data)
+int	handle_change_dir_to_home(t_data *data)
 {
-	char *home;
+	char	*home;
 
 	home = get_env("HOME", data->envp, 4);
 	if (!home)
@@ -39,7 +39,7 @@ int handle_change_dir_to_home(t_data *data)
 	return (1);
 }
 
-int handle_change_dir(t_cmd *cmd, t_data *data)
+int	handle_change_dir(t_cmd *cmd, t_data *data)
 {
 	if (chdir(cmd->full_cmd[1]) != 0)
 		printf("%s: %s\n", strerror(errno), cmd->full_cmd[1]);
@@ -47,16 +47,16 @@ int handle_change_dir(t_cmd *cmd, t_data *data)
 	return (1);
 }
 
-int execute_cd(t_cmd *cmd, t_data *data)
+int	execute_cd(t_cmd *cmd, t_data *data)
 {
 	if (!cmd->full_cmd[1])
 		return (handle_change_dir_to_home(data));
 	return (handle_change_dir(cmd, data));
 }
 
-int is_cd(t_cmd *node)
+int	is_cd(t_cmd *node)
 {
-	char *cmd;
+	char	*cmd;
 
 	cmd = node->full_cmd[0];
 	if (!cmd)

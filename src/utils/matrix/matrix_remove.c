@@ -12,12 +12,12 @@
 
 #include "../../../includes/minishell.h"
 
-char **matrix_remove(char **matrix, int to_remove)
+char	**matrix_remove(char **matrix, int to_remove)
 {
-	char **result;
-	int i;
-	int j;
-	int len;
+	char	**result;
+	int		i;
+	int		j;
+	int		len;
 
 	if (!matrix || !matrix[to_remove])
 		return (matrix);

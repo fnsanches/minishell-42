@@ -12,10 +12,10 @@
 
 #include "../../includes/minishell.h"
 
-int should_create_node(t_data *data, int i)
+int	should_create_node(t_data *data, int i)
 {
-	int is_pipe;
-	int has_args_after_pipe;
+	int	is_pipe;
+	int	has_args_after_pipe;
 
 	is_pipe = data->args[i][0] == '|';
 	has_args_after_pipe = (data->args[i + 1] && data->args[i + 1][0]);
@@ -26,9 +26,9 @@ int should_create_node(t_data *data, int i)
 	return (0);
 }
 
-int fill_current_node(t_cmd *node, char **trimmed_args, t_data *data, int i)
+int	fill_current_node(t_cmd *node, char **trimmed_args, t_data *data, int i)
 {
-	int argument_type;
+	int	argument_type;
 
 	argument_type = get_argument_type(data->args, i);
 	if (argument_type == PIPE || argument_type == NO_ARG)
@@ -46,11 +46,11 @@ int fill_current_node(t_cmd *node, char **trimmed_args, t_data *data, int i)
 	return (1);
 }
 
-void populate_command_nodes(t_data *data, char **trimmed_args)
+void	populate_command_nodes(t_data *data, char **trimmed_args)
 {
-	t_list *curr_node;
-	int offset;
-	int i;
+	t_list	*curr_node;
+	int		offset;
+	int		i;
 
 	i = 0;
 	offset = 0;
@@ -69,9 +69,9 @@ void populate_command_nodes(t_data *data, char **trimmed_args)
 	}
 }
 
-void fill_nodes(t_data *data)
+void	fill_nodes(t_data *data)
 {
-	char **trimmed_args;
+	char	**trimmed_args;
 
 	trimmed_args = trim_args(data->args);
 	populate_command_nodes(data, trimmed_args);

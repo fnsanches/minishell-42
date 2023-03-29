@@ -12,12 +12,12 @@
 
 #include "../../../includes/minishell.h"
 
-char *ft_strcat(char *src, char *dest)
+char	*ft_strcat(char *src, char *dest)
 {
-	int i;
-	int y;
-	int len;
-	char *result;
+	int		i;
+	int		y;
+	int		len;
+	char	*result;
 
 	i = 0;
 	y = 0;

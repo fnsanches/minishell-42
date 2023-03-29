@@ -12,16 +12,17 @@
 
 #include "../../../includes/minishell.h"
 
-static int is_space(char c)
+static int	is_space(char c)
 {
-	return (c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f' || c == ' ');
+	return (c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f'
+		|| c == ' ');
 }
 
-int restrict_atoi(const char *str)
+int	restrict_atoi(const char *str)
 {
-	int sign;
-	long result;
-	size_t i;
+	int		sign;
+	long	result;
+	size_t	i;
 
 	result = 0;
 	sign = 1;

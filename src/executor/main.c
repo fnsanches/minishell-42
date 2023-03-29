@@ -12,9 +12,9 @@
 
 #include "../../includes/minishell.h"
 
-int handle_command(t_list *node, t_data *data)
+int	handle_command(t_list *node, t_data *data)
 {
-	t_cmd *command;
+	t_cmd	*command;
 
 	command = node->content;
 	if (!command->full_cmd)
@@ -24,10 +24,10 @@ int handle_command(t_list *node, t_data *data)
 	return (handle_generate_output(node, data));
 }
 
-int execute_commands(t_data *data)
+int	execute_commands(t_data *data)
 {
-	t_list *current_node;
-	int status;
+	t_list	*current_node;
+	int		status;
 
 	current_node = data->cmds;
 	status = 1;
@@ -40,7 +40,7 @@ int execute_commands(t_data *data)
 	return (status);
 }
 
-int executor(t_data *data)
+int	executor(t_data *data)
 {
 	if (!data->cmds)
 		return (1);
