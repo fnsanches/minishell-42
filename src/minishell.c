@@ -6,7 +6,7 @@
 /*   By: fsanches <fsanches@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 20:49:51 by fsanches          #+#    #+#             */
-/*   Updated: 2023/03/29 15:08:49 by fsanches         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:50:10 by fsanches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	input_loop(t_data *data)
 		set_default_signal_handlers();
 		prompt = get_prompt(data);
 		data->input = readline(prompt);
+		free(prompt);
 		if (!handle_input(data))
 			data->running = 0;
 	}
